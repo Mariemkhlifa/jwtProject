@@ -1,0 +1,122 @@
+<app-navbar></app-navbar>
+<div *ngIf="user">
+  <form #formemploye="ngForm">
+  <h3>Detail de l'employées</h3>
+  <tr>
+    <th>  <label >Recherche Par Matricule</label></th>
+    <td><input placeholder="Matricule de l'employé" type="text" id="maticuleemp" name="matriculeemp" ngModel required> </td>
+    <button class="rech" (click)="find(formemploye)">Rehercher</button>
+  </tr>
+  <table border="1">
+
+    <div class="container">
+      <div class="left-inputs">
+    <tr>
+      <th>  <label >Id</label></th>
+      <td><input value="{{user.user_id}}" readonly></td>
+
+    </tr>
+    <tr>
+      <th>  <label >Name</label></th>
+      <td><input value="{{user.username}}" readonly></td>
+
+    </tr>
+    <tr>
+      <th> <label >LastName</label></th>
+      <td><input value="{{user.lastName}}" readonly></td>
+      <td> </td>
+    </tr>
+    <tr>
+      <th> <label >Email</label></th>
+      <td><input value="{{user.email}}" readonly></td>
+
+    </tr>
+    <tr>
+      <th> <label >Password</label></th>
+      <td><input value="{{user.password}}" hidden readonly></td>
+
+    </tr>
+  </div>
+
+  <div class="right-inputs">
+    <tr>
+      <th><label >Matricule</label></th>
+      <td><input value="{{user.matricule}}" readonly></td>
+
+    </tr>
+    <tr>
+      <th><label >PhoneNumber</label></th>
+      <td><input value="{{user.tel}}" readonly></td>
+
+    </tr>
+    <tr>
+      <th>  <label >DateNaissance</label></th>
+      <td><input value="{{user.dateNaissance}}" readonly></td>
+
+    </tr>
+    
+    <tr>
+      <th> <label >Sexe</label></th>
+      <td><input value="{{user.sexe}}" readonly></td>
+    </tr>
+  </div>
+    </div>
+  </table>
+  <button  >Modifier</button>&nbsp;&nbsp;
+  <button (click)="supprimer()" >Supprimer</button>
+</form>
+
+
+
+
+  <!-- <form #editForm="ngForm" (ngSubmit)="onSubmit()">
+    <table border="1">
+      <h3>Modifier les coordonnées</h3>
+      <div class="container">
+        <div class="left-inputs">
+
+      <tr>
+        <th> <label >Name</label></th>
+        <td><input type="text" ngModel name="newName" [(ngModel)]="user.username"></td>
+      </tr>
+      <tr>
+        <th> <label>LastName</label></th>
+        <td><input type="text" ngModel name="LastName" [(ngModel)]="user.lastName"></td>
+      </tr>
+      <tr>
+        <th> <label >Password</label></th>
+        <td><input type="text" ngModel name="Password" [(ngModel)]="user.password"></td>
+      </tr>
+      <tr>
+        <th><label>PhoneNumber</label></th>
+        <td><input type="text"  ngModel name="PhoneNumber" [(ngModel)]="user.tel"></td>
+      </tr>
+    </div>
+
+    <div class="right-inputs">
+      <tr>
+        <th> <label >Sexe</label></th>
+        <td><select #sexe style="height: 50px; width: 200px;" id="sexe" name="sexe" [(ngModel)]="user.sexe" required>
+          <option value="" style="color: grey;">Sélectionnez le sexe</option>
+          <option value="homme" >Homme</option>
+          <option value="femme" >Femme</option>
+      </select></td>
+      </tr>
+      <tr>
+        <th> <label >Email</label></th>
+        <td><input type="text" ngModel name="Email" [(ngModel)]="user.email"></td>
+      </tr>
+      <tr>
+        <th>  <label>DateNaissance</label></th>
+        <td><input type="text" ngModel name="Datenaissance" [(ngModel)]="user.dateNaissance"></td>
+      </tr>
+   
+    </div>
+  </div>
+    </table>
+     <button class="valider" type="submit">Valider</button>
+  </form> -->
+
+
+
+</div>

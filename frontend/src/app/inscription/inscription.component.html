@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="inscription">
+    <form  #inscritform>
+
+            <legend>
+                <h1>Inscription des employées</h1>
+            </legend>
+
+            <table>
+              <div class="container">
+                <div class="left-inputs">
+                <tr>
+                    <td><label for="name">Nom </label></td>
+                    <td><input placeholder="Nom" type="text" id="name" name="username" [(ngModel)]="employee.username" required></td>
+                </tr>
+                <tr>
+                    <td><label for="lastname">Prénom </label></td>
+                    <td><input placeholder="Prénom" type="text" id="lastname" name="lastname" [(ngModel)]="employee.lastName" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email </label></td>
+                    <td><input placeholder="Email" type="email" id="email" name="email" [(ngModel)]="employee.email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Mot de passe </label></td>
+                    <td><input placeholder="Mot de passe"type="password" id="password" name="password" [(ngModel)]="employee.password" required></td>
+                </tr>
+               
+              </div>
+
+        <div class="right-inputs">
+                <tr>
+                    <td><label for="sexe">Sexe </label></td>
+                    <td>
+                        <select style="height: 50px;" id="sexe" name="sexe" [(ngModel)]="employee.sexe" required>
+                            <option value="" style="color: grey;">Sélectionnez le sexe</option>
+                            <option value="homme" >Homme</option>
+                            <option value="femme" >Femme</option>
+                        </select>
+
+                    </td>
+                </tr>
+                <tr >
+                    <td><label for="matricule">Matricule </label></td>
+                    <td><input placeholder="Matricule"type="text" id="matricule" name="matricule"  [(ngModel)]="employee.matricule" required></td>
+                </tr>
+                <tr>
+                    <td><label for="tel">Téléphone </label></td>
+                    <td><input placeholder="Téléphone" type="tel" id="tel" name="tel" [(ngModel)]="employee.tel" required></td>
+                </tr>
+                <tr>
+                    <td><label for="dateNaissance">Date_de_naissance</label></td>
+                    <td><input placeholder="Date de naissance" type="date" id="dateNaissance" name="dateNaissance" [(ngModel)]="employee.dateNaissance" ></td>
+                </tr>
+        </div></div>
+            </table>
+         <button type="submit" (click)="onSubmit()" >Valider</button>
+    </form>
+</div>

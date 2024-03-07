@@ -1,0 +1,31 @@
+
+
+  <form #formrecuperation="ngForm">
+
+    <h3>Recuperation mon compte</h3>
+      <table>
+        <tr>
+          <label for="name">Email:</label><br>
+          <input placeholder="Email"   type="email" id="email" name="email" ngModel required>
+        </tr>
+        <tr>
+          <label for="name">Matricule:</label><br>
+          <input placeholder="Matricule"  type="text" id="matricule" name="matricule" ngModel required>
+        </tr>
+        <ng-template [ngIf]="!user">
+          <button (click)="verifier(formrecuperation)">Valider</button>
+        </ng-template>
+
+        <div class="bloqué">
+          <ng-template [ngIf]="user">
+            <tr>
+              <label for="name">Nouveau mot de passe:</label><br>
+              <input placeholder="Nouveau mot de passe" type="password" id="password" name="password" ngModel required>
+            </tr>
+            <button (click)="modifier(formrecuperation)" >Modifier</button>
+          </ng-template>
+        </div>
+      </table>
+
+  </form>
+

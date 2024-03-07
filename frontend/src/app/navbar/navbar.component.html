@@ -1,0 +1,16 @@
+
+
+
+
+<div class="topnav" id="myTopnav">
+  <a routerLink="/acceuil" class="active">Home</a>
+  <a routerLink="/profile/{{user_id}}"  >Profile</a>
+  <a routerLink="/detail/{{user_id}}"  *ngIf="inscriptionService.isAdmin()">Info-Employé</a>
+  <a routerLink="/inscrit" *ngIf="inscriptionService.isAdmin()">Inscription</a>
+  <!-- <ng-template ><a routerLink="/detail/{{user_id}}"  *ngIf="inscriptionService.isAdmin()">Info-Employé</a></ng-template>
+  <ng-template  ><a routerLink="/inscrit" *ngIf="inscriptionService.isAdmin()">Inscription</a></ng-template> -->
+  
+  
+  <a class="position" (click)="destroy()">Deconnexion</a>
+</div>
+
